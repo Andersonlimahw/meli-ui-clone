@@ -10,3 +10,6 @@ if(import.meta.env.DEV) {
 
 export const PEOPLE_ROUTE = `people`;
 export const PEOPLE_BY_ID_ROUTE = `people/:id`;
+
+export const DEPARTMENTS_ROUTE = `departments`;
+export const BADGE_ROUTE = `badge`;

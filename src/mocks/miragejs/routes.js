@@ -1,6 +1,10 @@
 import { createServer, Response, Model } from "miragejs";
 
 import peopleMock from "../api/swapi/people.json";
+
+import departmentsMock from "../api/meli/departments.json";
+import badgeMock from "../api/meli/badge.json";
+
 import { PEOPLE_BY_ID_ROUTE, PEOPLE_ROUTE } from "../../commons/utils/requests";
 
 
@@ -70,6 +74,25 @@ createServer({
       const data = {};
       return new Response(204, headers, data);
     });
+
+    // Meli:
+    this.get('/departments', (schema, request) => {
+      const { queryParams } = request;
+      let data = departmentsMock;
+      if(queryParams && queryParams.zipCode) {
+        data = { 
+          ...data,
+          departments: departmentsMock.departments.filter((x) => x.name.toLowerCase() === 'tecnologia')
+        };
+      }
+      
+      return new Response(200, headers, data);
+    });
+
+    this.get('/badge', (schema, request) => {
+      const data = badgeMock;
+      return new Response(200, headers, data);
+    })
   },
 });
 

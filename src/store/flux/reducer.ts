@@ -8,7 +8,7 @@ const selectedGradientThemeStyles: any = {
   blue: "from-blue-900 to-blue-400",
   purple: "from-purple-900 to-purple-400",
   red: "from-red-900 to-red-400",
-  yellow: "from-yellow-800 to-yellow-900",
+  yellow: "from-primary-yellow to-white-800",
   pink: "from-pink-900 to-pink-400",
   dark: "from-zinc-900 to-zinc-400",
   "": "from-zinc-900 to-zinc-400",

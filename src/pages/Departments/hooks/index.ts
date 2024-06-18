@@ -1,1 +1,1 @@
-export * from './use-hook-sample';
+export * from './use-departments';

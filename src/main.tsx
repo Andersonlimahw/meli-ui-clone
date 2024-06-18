@@ -8,13 +8,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Login } from './pages/Login/index.js';
-import { Chat } from './pages/Chat';
+
 
 import { startMirage } from './mocks/miragejs/index.js';
 
 import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Departments from './pages/Departments/index.js';
 
 if (import.meta.env.DEV) {
   startMirage();
@@ -25,11 +26,11 @@ if (import.meta.env.DEV) {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Departments />,
   },
   {
-    path: "/chat",
-    element: <Chat />,
+    path: "/departamentos",
+    element: <Departments />,
   }
 ]);
 

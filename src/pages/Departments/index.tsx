@@ -1,20 +1,22 @@
 import { ArrowLineLeft } from '@phosphor-icons/react';
 
-import { Footer } from '../../commons/components/Footer';
+
 import { useHookSample } from './hooks';
 import { EScreenState } from '../../enums';
-import { ErrorApiComponent, LoadingComponent, NoContentComponent } from '../../commons/components/ApiFeedbacks';
+
 import { stateKey } from '../../commons/utils/renders/screent-type';
+import { Card, ErrorApiComponent, Footer, HeadingLarge, HeadingMedium, HeadingSmall, LoadingComponent, NoContentComponent, ThemeSwitcher } from '../../commons/components';
+import { CategoryModel, DepartmentModel } from '../../models/meli';
+import { CardTitle } from '../../commons/components/Organisms/Card/Title';
 
-export const Chat = () => {
-
+export const Departments = () => {
 
   const useHook = useHookSample();
-  const { peopleQuery, theme } = useHook;
-  const {    
-    data: people,    
-    refetch,    
-   } = peopleQuery;
+  const { departmentsQuery, theme } = useHook;
+  const {
+    data,
+    refetch,
+  } = departmentsQuery;
 
   const hasSelectedContact = false;
   const containerClasses = {
@@ -32,60 +34,83 @@ export const Chat = () => {
   }
 
   const screnType = isMobile() ? 'mobile' : 'default';
-
   const SuccesComponent = () => (
     <>
-      <h1>
-        Lets code!
-      </h1>
-      <h1>
-        Api : Response
-        <br />
-        count: {people?.length}
-        <br />
-        Name: {people != null ? people[0].name : ''}
-      </h1>
+      <div className='mt-10 w-full'>
+        <HeadingMedium> 
+          Categorias
+        </HeadingMedium>
+      </div>      
+      {data?.departments &&
+        data?.departments.map((department: DepartmentModel) => (
+          <div className='flex flex-grow flex-wrap w-full items-center justify-between gap-4 m-auto max-w-screen-xl mt-2 mb-10'>
+            <div className="block text-center w-full py-4">
+              <HeadingLarge>
+                {department.name}
+              </HeadingLarge>
+            </div>
+           
+            <div className='flex flex-grow flex-wrap w-full justify-between gap-4 m-auto max-w-screen-xl mt-10'>
+              {
+                department.categories.map((category: CategoryModel, index: number) => (
+                  <div 
+                    className='flex'
+                    key={category.id}
+                  >
+                    <Card
+                      key={category.id}
+                      imageUrl={`https://picsum.photos/id/${index}/600/320`}
+                      title={category.name}
+                      description={`${category.name} ${category.children_categories?.length ?? 0}`}
+                      linkUrl={category.permalink}
+                      linkLabel={'ver mais'}
+                    />
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        ))
+      }
     </>);
 
- 
-  const screenState : any = { 
-    [EScreenState.loading]: { render: () => <LoadingComponent /> },
+
+  const screenState: any = {
+    [EScreenState.loading]: { render: () => 
+      (
+        <div className='flex flex-grow flex-wrap w-full justify-between gap-4 m-auto max-w-screen-xl py-6  px-4'>
+          {
+            Array(12).fill(0).map((item, index) => (<LoadingComponent key={index + item} /> ))
+          }
+        </div>
+      )
+      
+    },
     [EScreenState.error]: { render: () => <ErrorApiComponent onRetry={refetch} /> },
     [EScreenState.noCotent]: { render: () => <NoContentComponent /> },
     [EScreenState.success]: { render: () => <SuccesComponent /> },
-  }; 
+  };
   return (
     <>
-      <div className={`w-full h-40 bg-gradient-to-r ${theme.styles.gradient}`} >
-        <ArrowLineLeft size={48} className={`mx-2 py-2 cursor-pointer ${hasSelectedContact ? 'block' : 'hidden'}`} />
+      <div className={`w-full h-40 bg-gradient-to-r py-10 ${theme.styles.gradient}`} >
+        <ThemeSwitcher />
       </div>
 
       <div className="container mx-auto mt-[-128px] rounded-sm">
-        <div className="py-6 h-screen">
-          <div className={`flex shadow-lg rounded h-full ${containerClasses[screnType]}`}>
-            {/* Left */}
-            {
-              !hasSelectedContact && (
-                <>
-                  <h1>
-                    Happy customs!
-                    Request sample result on right!
-                  </h1>
-                  <Footer />
-                </>
-              )
-            }
-
+        <div className="py-4 h-full">
+          <div className={`flex shadow-lg rounded px-4 h-full ${containerClasses[screnType]}`}>
             {/* Right */}
             <div className={`animate-[wiggle_1s_ease-in-out_infinite] shadow-sm flex flex-col ${messagesContainerClasses[screnType]}`}>
-              {screenState[`${stateKey(peopleQuery)}`]?.render() ?? LoadingComponent() }
+              {screenState[`${stateKey(departmentsQuery)}`]?.render() ?? LoadingComponent()}
             </div>
           </div>
         </div>
       </div>
+      <div className='w-full h-12'></div>
+      {/* <Footer /> */}
     </>
   );
 };
 
-export default Chat;
+export default Departments;
 

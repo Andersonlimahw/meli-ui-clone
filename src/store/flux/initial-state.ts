@@ -2,11 +2,11 @@
 export const initialState = { 
   people: [],
   theme: {
-    type: 'blue',
+    type: 'yellow',
     styles: {
-      gradient: 'from-blue-900 to-blue-400',
-      background: 'bg-blue-900', 
-      text: 'text-zinc-100'
+      gradient: 'from-primary-yellow to-white-800',
+      background: 'bg-primary-yellow', 
+      text: 'text-zinc-900'
     }
   }
 };
