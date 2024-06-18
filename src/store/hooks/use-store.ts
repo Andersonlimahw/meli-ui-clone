@@ -3,7 +3,7 @@ import { create } from "zustand";
 import { IAction, initialState, reducer } from "../flux";
 
 export type IThemeType = {
-  type: 'dark' | 'light' | 'green' | 'blue' | 'purple' | 'red' | 'yellow' | 'pink'
+  type: 'dark' | 'light'
 }
 
 export interface ThemeType { 

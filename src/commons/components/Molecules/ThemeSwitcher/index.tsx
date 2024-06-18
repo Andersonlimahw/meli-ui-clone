@@ -5,7 +5,7 @@ import { useStoreHook } from "../../../../store/hooks/use-store";
 
 
 export const THEME_OPTIONS = [
-    'dark', 'light', 'green', 'blue', 'purple', 'red', 'yellow', 'pink'
+    'dark', 'light'
 ];
 
 export const ThemeSwitcher = () => {

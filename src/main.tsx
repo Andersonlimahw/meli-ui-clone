@@ -7,15 +7,13 @@ import {
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Login } from './pages/Login/index.js';
-
-
 import { startMirage } from './mocks/miragejs/index.js';
 
 import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Departments from './pages/Departments/index.js';
+import { useStore } from 'zustand';
 
 if (import.meta.env.DEV) {
   startMirage();
@@ -50,9 +48,13 @@ const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ToastContainer />
-      <RouterProvider router={router} />
+      <ToastContainer />      
+        <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={true} />
+      {/* Add the following code */}
+      <div>
+        
+      </div>
     </QueryClientProvider>
   </React.StrictMode>,
 )

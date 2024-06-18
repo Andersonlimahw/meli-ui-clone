@@ -2,27 +2,15 @@ import { IState } from "../hooks/use-store";
 import { EActionType, IAction } from "./actions";
 import { initialState } from "./initial-state";
 
-const selectedGradientThemeStyles: any = {
-  light: "from-zinc-400 to-zinc-600",
-  green: "from-green-900 to-green-400",
-  blue: "from-blue-900 to-blue-400",
-  purple: "from-purple-900 to-purple-400",
-  red: "from-red-900 to-red-400",
-  yellow: "from-primary-yellow to-white-800",
-  pink: "from-pink-900 to-pink-400",
+const selectedGradientThemeStyles: any = {    
+  light: "from-primary-yellow to-white-800",  
   dark: "from-zinc-900 to-zinc-400",
   "": "from-zinc-900 to-zinc-400",
   null: "from-zinc-900 to-zinc-400",
 };
 
 const selectedBackgroundThemeStyles: any = {
-  light: "bg-white-900",
-  green: "bg-green-900",
-  blue: "bg-blue-900",
-  purple: "bg-purple-900",
-  red: "bg-red-900",
-  yellow: "bg-yellow-600",
-  pink: "bg-pink-900",
+  light: "bg-yellow-600",  
   dark: "bg-zinc-900",
   "": "bg-zinc-900",
   null: "bg-zinc-900",

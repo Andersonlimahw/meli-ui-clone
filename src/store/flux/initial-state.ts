@@ -2,7 +2,7 @@
 export const initialState = { 
   people: [],
   theme: {
-    type: 'yellow',
+    type: 'light',
     styles: {
       gradient: 'from-primary-yellow to-white-800',
       background: 'bg-primary-yellow', 
