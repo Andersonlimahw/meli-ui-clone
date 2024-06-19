@@ -15,11 +15,13 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Departments from './pages/Departments/index.js';
 import Landings from './pages/Landings/index.js';
 
-if (import.meta.env.DEV) {
-  startMirage();
-} else {
-  console.log('Enviroment: ', import.meta.env);
-}
+// if (import.meta.env.DEV) {
+//   startMirage();
+// } else {
+//   console.log('Enviroment: ', import.meta.env);
+// }
+// TODO: desable mock on prod after api is ready
+startMirage();
 
 const router = createBrowserRouter([
   {
