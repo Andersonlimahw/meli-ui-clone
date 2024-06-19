@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-yellow': '#ffe600', // Name your color
+        'primary-yellow': '#ffe600',
       },
     },
   },
