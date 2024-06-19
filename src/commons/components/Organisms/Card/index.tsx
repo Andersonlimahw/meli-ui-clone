@@ -8,7 +8,7 @@ import { CardSkills } from "./CardSkills";
 
 interface CardProps {
     title: string,
-    description: string,
+    description?: string,
     icon?: ReactNode,
     linkUrl: string,
     linkLabel: string,
@@ -42,7 +42,7 @@ export const Card: FC<CardProps> = ({
                 text-zinc-900                 
                 shadow-xl 
                 shadow-white-500/50
-                hover:shadow-primary-yellow-500/50
+                hover:shadow-zinc-500/50
                 border-x-2 
                 border-y-1 
                 hover:border-primary-yellow-800 
@@ -62,7 +62,11 @@ export const Card: FC<CardProps> = ({
                 }
                 <div className="p-6">
                     <CardTitle icon={icon} title={title} />
-                    <CardDescription description={description} />
+                    {
+                        description && 
+                        description.length > 0 && 
+                        (<CardDescription description={description} />)
+                    }
                 </div>
                 {
                     iconList && 

@@ -14,6 +14,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Departments from './pages/Departments/index.js';
 import { Login } from './pages/Login/index.js';
+import { Menu } from './commons/components/index.js';
+import Landings from './pages/Landings/index.js';
 
 if (import.meta.env.DEV) {
   startMirage();
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/departamentos",
     element: <Departments />,
+  },
+  {
+    path: "/landings",
+    element: <Landings />,
   }
 ]);
 
@@ -48,13 +54,9 @@ const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ToastContainer />      
+      <ToastContainer />     
         <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={true} />
-      {/* Add the following code */}
-      <div>
-        
-      </div>
     </QueryClientProvider>
   </React.StrictMode>,
 )

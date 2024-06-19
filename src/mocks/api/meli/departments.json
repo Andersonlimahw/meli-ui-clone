@@ -262,6 +262,10 @@
         {
             "label": "Supermercado",
             "permalink": "https://www.mercadolivre.com.br/ofertas/supermercado#menu=categories"
+        },
+        {
+            "label": "Moda",
+            "permalink": "https://www.mercadolivre.com.br/c/calcados-roupas-e-bolsas#menu=categories"
         }
     ]
 }   

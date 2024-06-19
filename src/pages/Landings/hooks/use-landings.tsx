@@ -8,7 +8,7 @@ import { MarketplaceDataModel } from "../../../models/meli";
 import { MeliServiceDepartmentsApi } from "../../../services";
 
 
-export const useDepartments = () => {
+export const useLandings = () => {
   const useStore = useStoreHook((state: any) => state);
   const _meliDepartmentServiceApi =  new MeliServiceDepartmentsApi();
   const {

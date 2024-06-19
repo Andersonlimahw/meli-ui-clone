@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 interface CardDescriptionProps {
-    description: string,
+    description?: string,
 }
 
 export const CardDescription: FC<CardDescriptionProps> = ({ description }: CardDescriptionProps) => {

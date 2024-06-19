@@ -1,17 +1,15 @@
-import { ArrowLineLeft } from '@phosphor-icons/react';
 
-
-import { useHookSample } from './hooks';
+import { useDepartments } from './hooks';
 import { EScreenState } from '../../enums';
 
 import { stateKey } from '../../commons/utils/renders/screent-type';
-import { Card, ErrorApiComponent, Footer, HeadingLarge, HeadingMedium, HeadingSmall, LoadingComponent, NoContentComponent, ThemeSwitcher } from '../../commons/components';
+import { Card, ErrorApiComponent, Footer, HeadingLarge, HeadingMedium, LoadingComponent, Menu, NoContentComponent } from '../../commons/components';
 import { CategoryModel, DepartmentModel } from '../../models/meli';
-import { CardTitle } from '../../commons/components/Organisms/Card/Title';
+
 
 export const Departments = () => {
 
-  const useHook = useHookSample();
+  const useHook = useDepartments();
   const { departmentsQuery, theme } = useHook;
   const {
     data,
@@ -36,6 +34,7 @@ export const Departments = () => {
   const screnType = isMobile() ? 'mobile' : 'default';
   const SuccesComponent = () => (
     <>
+       <Menu />
       <div className='mt-10 w-full'>
         <HeadingMedium> 
           Categorias
@@ -98,7 +97,6 @@ export const Departments = () => {
   return (
     <>
       <div className={`w-full h-40 bg-gradient-to-r py-10 ${theme.styles.gradient}`} >
-        <ThemeSwitcher />
       </div>
 
       <div className="container mx-auto mt-[-128px] rounded-sm">
@@ -112,7 +110,7 @@ export const Departments = () => {
         </div>
       </div>
       <div className='w-full h-12'></div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -18,9 +18,6 @@ export interface Landing {
 export interface MarketplaceDataModel {
   departments: DepartmentModel[];
   landings: Landing[];
-  more_categories: {
-    label: string;
-    permalink: string;
-  };
+  more_categories: Landing[];
   high_priority: Landing[];
 }
