@@ -64,6 +64,11 @@ export const Departments = () => {
                       description={`${category.name} ${category.children_categories?.length ?? 0}`}
                       linkUrl={category.permalink}
                       linkLabel={'ver mais'}
+                      iconList={[
+                        'DeviceMobile', 
+                        'AppleLogo', 
+                        'GoogleLogo'
+                      ]}
                     />
                   </div>
                 ))

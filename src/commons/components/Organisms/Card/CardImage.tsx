@@ -1,4 +1,3 @@
-import { Image } from 'openai/resources';
 import { FC, HTMLAttributes } from 'react';
 
 interface CardImageProps extends HTMLAttributes<HTMLImageElement> {
@@ -14,6 +13,9 @@ export const CardImage: FC<CardImageProps> = ({ variant = 'thumbnail' , ...other
         'thumbnail': 'rounded-xs'
     }
     return (
-        <img  className={`image ${variantClasses[variant]}`} {...otherProps} loading="lazy" />
+        <img  className={`image ${variantClasses[variant]}`} 
+            {...otherProps} 
+            loading="lazy"
+        />
     );
 }

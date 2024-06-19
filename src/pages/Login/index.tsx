@@ -7,7 +7,7 @@ export const Login = () => {
     const navigate = useNavigate();
     const handleLogin = () => {
         toast("Welcome!.", { type: "success" });
-        navigate('/chat');
+        navigate('/departamentos');
     }
     return (
         <div
