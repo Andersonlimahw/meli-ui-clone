@@ -10,7 +10,7 @@ export const Menu = () => {
     const menuItems: MenuItemProps[] = [
         {
             label: 'Categorias',
-            link: '/departamentos'
+            link: '/'
         },
         {
             label: 'Landings+',

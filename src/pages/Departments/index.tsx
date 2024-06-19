@@ -32,6 +32,12 @@ export const Departments = () => {
   }
 
   const screnType = isMobile() ? 'mobile' : 'default';
+  const renderChildrenCategories = (categories: CategoryModel[]) => {
+    const [firstCategory] = categories;
+    if(!firstCategory) return null;
+
+    return firstCategory.name;
+  }
   const SuccesComponent = () => (
     <>
        <Menu />
@@ -60,7 +66,7 @@ export const Departments = () => {
                       key={category.id}
                       imageUrl={`https://picsum.photos/id/${index}/600/320`}
                       title={category.name}
-                      description={`${category.name} ${category.children_categories?.length ?? 0}`}
+                      description={renderChildrenCategories(category.children_categories) ?? category.name}
                       linkUrl={category.permalink}
                       linkLabel={'ver mais'}
                       iconList={[

@@ -13,8 +13,6 @@ import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Departments from './pages/Departments/index.js';
-import { Login } from './pages/Login/index.js';
-import { Menu } from './commons/components/index.js';
 import Landings from './pages/Landings/index.js';
 
 if (import.meta.env.DEV) {
@@ -26,10 +24,6 @@ if (import.meta.env.DEV) {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/departamentos",
     element: <Departments />,
   },
   {

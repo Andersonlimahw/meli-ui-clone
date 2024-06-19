@@ -2,7 +2,7 @@ export interface CategoryModel {
   id: string;
   name: string;
   permalink: string;
-  children_categories?: CategoryModel[];
+  children_categories: CategoryModel[];
 }
 
 export interface DepartmentModel {
