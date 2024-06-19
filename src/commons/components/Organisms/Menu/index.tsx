@@ -33,7 +33,7 @@ export const Menu = () => {
                
                     <div className={`
                         flex flex-col md:flex-row justify-between mx-4 transition-all duration-800 ease-in-out 
-                            ${isOpen ? 'block bg-white w-full h-[15vh] py-4 mt-16 flex-1 absolute left-0 ml-0' : 'hidden'} md:block`
+                            ${isOpen ? 'block bg-white w-full h-[20vh] py-4 mt-16 flex-1 absolute left-0 ml-0' : 'hidden'} md:block`
                     } >
                         {
                             menuItems.map((item) => (

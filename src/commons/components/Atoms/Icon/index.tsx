@@ -26,6 +26,7 @@ import {
     Code,
     Kanban,
     Timer,
+    Bell,
 
 } from '@phosphor-icons/react';
 import { FC } from 'react';
@@ -67,6 +68,7 @@ export const renderIcon = ({ name, size = 32, color = '#121212', ...otherProps }
         'Kanban': { render: () => <Kanban size={size} color={color} {...otherProps} /> },        
         'Timer': { render: () => <Timer size={size} color={color} {...otherProps} /> },  
         'Hash': { render: () => <Hash size={size} color={color} {...otherProps} /> },
+        'Bell': { render: () => <Bell size={size} color={color} {...otherProps} /> },
     };
     return iconsList[`${name}`]?.render() ?? <GithubLogo size={size} color={color} />;
 }
