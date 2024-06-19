@@ -4,7 +4,7 @@ import { EScreenState } from '../../enums';
 
 import { stateKey } from '../../commons/utils/renders/screent-type';
 import { Card, ErrorApiComponent, Footer, HeadingLarge, HeadingMedium, HeadingSmall, LoadingComponent, Menu, NoContentComponent, ThemeSwitcher } from '../../commons/components';
-import { CategoryModel, DepartmentModel, Landing } from '../../models/meli';
+import { LandingModel } from '../../models/meli';
 import { useMemo } from 'react';
 
 export const Landings = () => {
@@ -51,7 +51,7 @@ export const Landings = () => {
       </div>
       <div className='flex flex-row flex-grow flex-no-wrap w-full justify-between gap-4 mx-auto my-10 pb-10 max-w-screen-xl overflow-x-scroll'>
         {data?.landings &&
-          data?.landings.map((landing: Landing, index: number) => (
+          data?.landings.map((landing: LandingModel, index: number) => (
             <div className="flex">
               <Card
                 key={landing.permalink}

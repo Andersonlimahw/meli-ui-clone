@@ -3,14 +3,6 @@ import { MenuItem, MenuItemProps } from "./Item";
 import { useState } from 'react';
 import { TextOutdent, X } from "@phosphor-icons/react";
 
-const customAnimations = {
-    hidden: {
-        opacity: 0,
-    },
-    show: {
-        opacity: 1,
-    },
-};
 
 export const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -38,11 +30,10 @@ export const Menu = () => {
                     height="auto" 
                 />
                 </div>
-
                
                     <div className={`
                         flex flex-col md:flex-row justify-between mx-4 transition-all duration-800 ease-in-out 
-                            ${isOpen ? 'block bg-transparent w-full h-[30vh] py-4 mt-16 flex-1 absolute left-0 ml-0' : 'hidden'} md:block`
+                            ${isOpen ? 'block bg-white w-full h-[15vh] py-4 mt-16 flex-1 absolute left-0 ml-0' : 'hidden'} md:block`
                     } >
                         {
                             menuItems.map((item) => (
@@ -58,7 +49,7 @@ export const Menu = () => {
                 
 
                 <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden absolute right-8`}>
-                    {isOpen ? <X size={32} color="#7ED959" /> : <TextOutdent size={32} color="#7ED959" />}
+                    {isOpen ? <X size={32} color="#333" /> : <TextOutdent size={32} color="#333" />}
                 </button>
             </div>
         </nav>

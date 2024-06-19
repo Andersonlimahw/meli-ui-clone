@@ -10,14 +10,14 @@ export interface DepartmentModel {
   categories: CategoryModel[];
 }
 
-export interface Landing {
+export interface LandingModel {
   label: string;
   permalink: string;
 }
 
 export interface MarketplaceDataModel {
   departments: DepartmentModel[];
-  landings: Landing[];
-  more_categories: Landing[];
-  high_priority: Landing[];
+  landings: LandingModel[];
+  more_categories: LandingModel[];
+  high_priority: LandingModel[];
 }

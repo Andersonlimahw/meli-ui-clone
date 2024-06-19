@@ -9,7 +9,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button : FC<ButtonProps> = ({ variant, size, children, ...otherProps } : ButtonProps) => {
     // Dicitonay
     const variantClass : any = {
-        'primary': 'bg-gradient-to-r from-green-300 from-10% via-sky-400 via-40% to-emerald-300 to-90% text-zinc-800 hover:opacity-80',
+        'primary': 'bg-gradient-to-r from-white-300 from-10% via-yellow-400 via-50% to-yellow-300 to-90% text-zinc-800 hover:opacity-80',
         'secondary': 'bg-gradient-to-r from-zinc-600 from-10% via-zinc-100 via-30% to-zinc-300 to-90% text-zinc-900 hover:opacity-80',
         'link': 'bg-transparent  text-zinc-100 hover:opacity-90 hover:text-zinc-200 hover:font-bold hover:underline',
     };
